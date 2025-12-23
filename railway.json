@@ -1,9 +1,0 @@
-{
-  "$schema": "https://railway.app/railway.schema.json",
-  "build": {
-    "builder": "NIXPACKS"
-  },
-  "deploy": {
-    "startCommand": "ALLOWED_HOSTS='*' FAST_MCP_UVICORN_ARGS='--proxy-headers --forwarded-allow-ips=*' fastmcp run cv_mcp_server.py:mcp --transport http --host 0.0.0.0 --port $PORT"
-  }
-}
