@@ -10,9 +10,7 @@ from typing import Dict, List, Any
 mcp = FastMCP(
     "cv-mcp",
     transport_security=TransportSecuritySettings(
-        enable_dns_rebinding_protection=True,
-        allowed_hosts=["localhost:*", "127.0.0.1:*", "guizot-cv-mcp-production.up.railway.app:*"],
-        allowed_origins=["http://localhost:*", "https://guizot-cv-mcp-production.up.railway.app:*"],
+        enable_dns_rebinding_protection=False,
     )
 )
 
