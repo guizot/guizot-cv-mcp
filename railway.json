@@ -4,6 +4,6 @@
     "builder": "NIXPACKS"
   },
   "deploy": {
-    "startCommand": "FAST_MCP_UVICORN_ARGS='--proxy-headers --forwarded-allow-ips=*' fastmcp run cv_mcp_server.py:mcp --transport http --host 0.0.0.0 --port $PORT"
+    "startCommand": "FAST_MCP_TRUSTED_HOSTS='*' FAST_MCP_UVICORN_ARGS='--proxy-headers --forwarded-allow-ips=*' fastmcp run cv_mcp_server.py:mcp --transport http --host 0.0.0.0 --port $PORT"
   }
 }
