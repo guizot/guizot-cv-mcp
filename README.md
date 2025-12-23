@@ -1,0 +1,1 @@
+# CV MCP (Multi-Key)\n\nReplace API keys in config/api_keys.json
