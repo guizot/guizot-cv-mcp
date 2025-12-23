@@ -1,12 +1,20 @@
 from pathlib import Path
 from mcp.server.fastmcp import FastMCP
+from mcp.server.transport_security import TransportSecuritySettings
 import re
 from typing import Dict, List, Any
 
 # --------------------------------------------------
 # Initialize MCP
 # --------------------------------------------------
-mcp = FastMCP("cv-mcp")
+mcp = FastMCP(
+    "cv-mcp",
+    transport_security=TransportSecuritySettings(
+        enable_dns_rebinding_protection=True,
+        allowed_hosts=["localhost:*", "127.0.0.1:*", "guizot-cv-mcp-production.up.railway.app:*"],
+        allowed_origins=["http://localhost:*", "https://guizot-cv-mcp-production.up.railway.app:*"],
+    )
+)
 
 # --------------------------------------------------
 # Load CV (markdown only)
